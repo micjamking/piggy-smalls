@@ -11,13 +11,20 @@ partials:
 
 - partial: Hero
   title: Welcome!
-  body: Update your profile with your name,<br/> favorite color and an icon you like.
+  body: <a data-trigger-settings-modal>Update your profile</a> with your name,<br/> favorite color and an icon you like.
   assets:
   - url: /static/images/savings__small.svg
     width: 16
     height: 9
   footer: 0% complete
 
-- partial: Spacer
-  options:
-  - large
+# - partial: Hero
+#   options:
+#     - hidden
+#   title: Howzit!
+#   body: Now <a data-trigger-deposit-modal>add some money</a> to <br/> your piggy bank to get started!
+#   assets:
+#   - url: /static/images/savings__small.svg
+#     width: 16
+#     height: 9
+#   footer: 50% complete

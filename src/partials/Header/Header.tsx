@@ -1,11 +1,11 @@
 /** @jsx h */
-
+import {h} from 'preact';
 import Asset, {AssetOptions} from '../../components/Asset/Asset';
 import Button, {ButtonProps} from '../../components/Button/Button';
-
+import Settings, {SettingsProps} from '../../components/Settings/Settings';
 import {Document} from '@amagaki/amagaki';
 import {getClassName} from '../../utils/partials';
-import {h} from 'preact';
+import {useCallback, useEffect, useState} from 'preact/compat';
 
 // TODO: Improve declaration of custom elements.
 
@@ -28,7 +28,24 @@ interface HeaderProps {
   buttons: ButtonProps[];
 }
 
-function Header({partial, doc}: {partial: HeaderProps; doc: Document}) {
+function Header({
+  partial
+}: {
+  partial: HeaderProps;
+}) {
+  const [isSettingsVisible, setIsSettingsVisible] = useState(false);
+  const handleSettingsOpen = useCallback((e: CustomEvent) => {
+    setIsSettingsVisible(e.detail.visible);
+    console.log('isSettingsVisible:', isSettingsVisible, e.detail.visible);
+  }, []);
+
+  // Similar to componentDidMount and componentDidUpdate:
+  useEffect(() => {
+    document.addEventListener('openSettings', handleSettingsOpen);
+    return () => {
+      document.removeEventListener('openSettings', handleSettingsOpen);
+    };
+  }, [handleSettingsOpen]);
   return (
     <div className={getClassName('header', partial.options)}>
       <div className="header__grid">
@@ -37,24 +54,12 @@ function Header({partial, doc}: {partial: HeaderProps; doc: Document}) {
             <Asset {...partial.logo?.image} />
           </a>
         </div>
-        <div className="header__grid__links">
-          {partial.nav?.map(item => (
-            <a
-              href={item.url?.path}
-              className={`header__grid__links__link ${
-                item.url?.path === doc.url?.path &&
-                'header__grid__links__link--active'
-              }`}
-            >
-              {item.fields.navTitle}
-            </a>
-          ))}
-        </div>
         <div className="header__grid__buttons">
-          <div className="header__grid__login">
+          <div className="header__grid__login" data-trigger-settings-modal>
             <span class="header__grid__greeting">Good Morning!</span>
             <div class="header__grid__avatar"></div>
           </div>
+          <Settings visible={isSettingsVisible} />
           <details className="header__mobile-nav">
             <summary className="header__mobile-nav__summary">
               <Button label="Menu" ariaLabel="Toggle menu" />

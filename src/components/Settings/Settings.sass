@@ -1,0 +1,22 @@
+@use 'utils/color'
+@use 'utils/spacing'
+@use 'utils/type'
+
+.settings-container
+  position: fixed
+  width: 100%
+  height: 100%
+  background-color: rgba(0,0,0,0.75)
+  top: 0
+  left: 0
+  z-index: 100000
+
+.settings-modal
+  display: none
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  margin: 0
+  &[open]
+    display: block

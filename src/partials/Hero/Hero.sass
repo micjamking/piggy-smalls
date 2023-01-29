@@ -28,6 +28,13 @@
     margin-right: auto
     max-width: spacing.$max-body-width
 
+    a
+      font-weight: 700
+      color: inherit
+      &[data-trigger-settings-modal]
+        text-decoration: underline
+        cursor: pointer
+
 .hero__grid__content__body
     & + .hero__grid__content__buttons
         margin-top: spacing.$size-40
@@ -54,3 +61,6 @@
     display: flex
     justify-content: center
     gap: spacing.$size-10
+
+.hero--hidden
+  display: none

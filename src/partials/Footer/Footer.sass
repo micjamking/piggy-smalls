@@ -6,10 +6,12 @@
     --module-background: #{color.$secondary-background}
     background: var(--module-background)
     border-top: 1px solid var(--module-border-color)
-    padding: spacing.$size-20
+    box-sizing: border-box
+    padding: 26px spacing.$size-50
     position: fixed
     bottom: 0
     width: 100%
+    height: 100px
 
 .footer__grid
     display: flex
@@ -23,8 +25,25 @@
     flex-direction: row
     gap: spacing.$size-20
 
-.header__grid__links__link
+.footer__grid__links__link
+  align-items: center
+  background-color: var(--module-background)
+  border-radius: 8px
+  box-sizing: border-box
   color: color.$background
+  display: flex
+  font-weight: 800
+  font-size: 24px
+  height: 48px
+  justify-content: center
+  padding: 8px 35px
+  text-transform: uppercase
+  text-decoration: none
+  width: 170px
+
+  &.footer__grid__links__link--active
+    background-color: color.$background
+    color:  var(--module-background)
 
 .footer__grid__aside
     display: flex

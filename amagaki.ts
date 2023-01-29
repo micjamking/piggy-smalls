@@ -21,7 +21,7 @@ export default (pod: Pod) => {
       ],
       icon: pod.staticFile('/src/static/images/amagaki.png'),
       stylesheets: [
-        'https://fonts.googleapis.com/css?family=Nunito:400,700|Material+Icons&amp;display=swap',
+        'https://fonts.googleapis.com/css?family=Nunito:400,700,800|Material+Icons&amp;display=swap',
         pod.staticFile('/dist/css/main.css'),
       ],
     },

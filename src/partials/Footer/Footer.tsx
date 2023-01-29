@@ -27,7 +27,10 @@ function Footer({
       <div className="footer__grid">
         <div className="footer__grid__links">
           {partial.nav?.map(item => (
-            <a href="{item.url.path}" className="header__grid__links__link">
+            <a href={item.url.path} className={`footer__grid__links__link ${
+              item.url?.path === doc.url?.path &&
+              'footer__grid__links__link--active'
+            }`}>
               {item.fields.navTitle}
             </a>
           ))}

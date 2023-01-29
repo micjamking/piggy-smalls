@@ -15,10 +15,6 @@ export interface HeroProps {
   footer?: string;
 }
 
-function activateLasers(): void {
-  console.log('it worked!');
-}
-
 function Hero({
   partial,
 }: {
