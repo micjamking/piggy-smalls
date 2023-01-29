@@ -1,4 +1,4 @@
-# amagaki-starter
+# piggy-smalls
 
 [![NPM Version][npm-image]][npm-url]
 [![GitHub Actions][github-image]][github-url]

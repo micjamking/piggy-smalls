@@ -32,8 +32,7 @@
     --link-active-border-color: black
     --link-hover-border-color: rgba(0, 0, 0, 0.4)
     background: var(--module-background)
-    border-bottom: 1px solid var(--module-border-color)
-    padding: spacing.$size-20
+    padding: spacing.$size-36 spacing.$size-50 0
     position: sticky
     top: 0
 
@@ -45,6 +44,7 @@
 
 .header__grid
     align-items: center
+    justify-content: space-between
     display: flex
     gap: spacing.$size-40
     margin: 0 auto
@@ -78,6 +78,23 @@
     display: flex
     gap: spacing.$size-10
     justify-content: flex-end
+
+.header__grid__login
+  display: flex
+  justify-content: center
+  align-items: center
+
+.header__grid__greeting
+  font-size: 20px
+  font-weight: 700
+  margin-right: spacing.$size-20
+
+.header__grid__avatar
+  display: block
+  background-color: #EDEDED
+  width: 48px
+  height: 48px
+  border-radius: 100%
 
 .header__mobile-nav
     +breakpoints.laptop-gt

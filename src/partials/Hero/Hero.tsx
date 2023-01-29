@@ -12,6 +12,7 @@ export interface HeroProps {
   body?: string;
   assets?: AssetOptions[];
   buttons?: ButtonProps[];
+  footer?: string;
 }
 
 function activateLasers(): void {
@@ -34,11 +35,9 @@ function Hero({
           >
             {partial.title}
           </div>
-          <div className="hero__grid__content__body">{partial.body}</div>
-          <div className="hero__grid__content__body">
-            <br />
-            <Button onClick={activateLasers} label="Activate lasers" />
-          </div>
+          {partial.body && (
+            <div className="hero__grid__content__body" dangerouslySetInnerHTML={{__html: partial.body}}></div>
+          )}
           {partial.buttons && (
             <div className="hero__grid__content__buttons">
               {partial.buttons.map((button, i) => (
@@ -54,6 +53,9 @@ function Hero({
                 <Asset {...asset} />
               ))}
             </div>
+          )}
+          {partial.footer && (
+            <div className="hero__grid__content__footer" dangerouslySetInnerHTML={{__html: partial.footer}}></div>
           )}
         </div>
       </div>

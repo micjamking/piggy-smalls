@@ -32,30 +32,6 @@ function Footer({
             </a>
           ))}
         </div>
-        <div className="footer__grid__aside">
-          {doc.locales && (
-            <div className="footer__grid__aside__switcher">
-              <div className="footer__grid__aside__switcher__label">
-                <span className="material-icons">language</span>
-              </div>
-              <div className="footer__grid__aside__switcher__form">
-                <select>
-                  {/* onChange="window.location.href = this.value"> */}
-                  {[...doc.locales].map(locale => (
-                    <option
-                      value="{{localizedDoc.url.path}}"
-                      selected={
-                        pod.doc(doc.podPath, locale).locale === doc.locale
-                      }
-                    >
-                      {locale.id}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-          )}
-        </div>
       </div>
     </div>
   );

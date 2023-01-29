@@ -5,6 +5,7 @@ enum SpacerOptions {
   Small = 'small',
   Medium = 'medium',
   Large = 'large',
+  XLarge = 'xlarge',
 }
 
 export interface SpacerProps {

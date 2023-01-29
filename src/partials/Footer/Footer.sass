@@ -7,17 +7,24 @@
     background: var(--module-background)
     border-top: 1px solid var(--module-border-color)
     padding: spacing.$size-20
+    position: fixed
+    bottom: 0
+    width: 100%
 
 .footer__grid
     display: flex
     margin: 0 auto
     max-width: spacing.$max-width
+    justify-content: center
+    align-items: center
 
 .footer__grid__links
     display: flex
     flex-direction: row
-    flex-grow: 1
     gap: spacing.$size-20
+
+.header__grid__links__link
+  color: color.$background
 
 .footer__grid__aside
     display: flex

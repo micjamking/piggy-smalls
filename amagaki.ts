@@ -12,7 +12,7 @@ export default (pod: Pod) => {
       enabled: pod.env.name !== 'prod',
     },
     head: {
-      siteName: 'Starter',
+      siteName: 'Piggy Smalls',
       scripts: [
         {
           href: pod.staticFile('/dist/chunks/main.js'),
@@ -21,7 +21,7 @@ export default (pod: Pod) => {
       ],
       icon: pod.staticFile('/src/static/images/amagaki.png'),
       stylesheets: [
-        'https://fonts.googleapis.com/css?family=Manrope:400,500,600,700|Material+Icons&amp;display=swap',
+        'https://fonts.googleapis.com/css?family=Nunito:400,700|Material+Icons&amp;display=swap',
         pod.staticFile('/dist/css/main.css'),
       ],
     },

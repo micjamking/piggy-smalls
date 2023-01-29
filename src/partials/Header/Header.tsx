@@ -24,7 +24,7 @@ interface HeaderProps {
     doc: Document;
     image: AssetOptions;
   };
-  nav: Document[];
+  nav?: Document[];
   buttons: ButtonProps[];
 }
 
@@ -38,7 +38,7 @@ function Header({partial, doc}: {partial: HeaderProps; doc: Document}) {
           </a>
         </div>
         <div className="header__grid__links">
-          {partial.nav.map(item => (
+          {partial.nav?.map(item => (
             <a
               href={item.url?.path}
               className={`header__grid__links__link ${
@@ -51,10 +51,9 @@ function Header({partial, doc}: {partial: HeaderProps; doc: Document}) {
           ))}
         </div>
         <div className="header__grid__buttons">
-          <div className="header__grid__buttons__desktop-buttons">
-            {partial.buttons?.map(button => (
-              <Button {...button} />
-            ))}
+          <div className="header__grid__login">
+            <span class="header__grid__greeting">Good Morning!</span>
+            <div class="header__grid__avatar"></div>
           </div>
           <details className="header__mobile-nav">
             <summary className="header__mobile-nav__summary">
